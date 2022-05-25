@@ -21,26 +21,31 @@
     </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased dark:text-white">
+    <div class="min-h-screen bg-gray-100 dark:bg-gray-900 pt-24">
 
-    <x-layout.navigation />
+        <x-layout.navigation />
 
-    {{-- <div class="flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 bg-slate-200">
+        {{-- <div class="flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 bg-slate-200">
 
-            {{ $slot }}
+                {{ $slot }}
 
-            <div
-                class="flex justify-center mt-4 sm:items-center sm:justify-between">
                 <div
-                    class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                    Laravel v{{ Illuminate\Foundation\Application::VERSION }}
-                    (PHP v{{ PHP_VERSION }})
+                    class="flex justify-center mt-4 sm:items-center sm:justify-between">
+                    <div
+                        class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
+                        Laravel v{{ Illuminate\Foundation\Application::VERSION }}
+                        (PHP v{{ PHP_VERSION }})
+                    </div>
                 </div>
             </div>
-        </div>
-    </div> --}}
+        </div> --}}
 
+        {{-- {{ $slot }} --}}
+
+        <x-layout.footer></x-layout.footer>
+    </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 

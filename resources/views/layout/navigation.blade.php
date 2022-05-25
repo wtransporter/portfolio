@@ -1,9 +1,7 @@
-<div>
-    <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
-</div><!-- ====== Navbar Section Start -->
+<!-- ====== Navbar Section Start -->
 <header
     x-data="{ navbarOpen: false }"
-    class="bg-white w-full flex items-center">
+    class="fixed top-0 left-0 z-50 bg-white w-full flex items-center h-24">
     <div class="container">
         <div class="flex -mx-4 items-center justify-between relative">
             <div class="px-4 w-60 max-w-full">
