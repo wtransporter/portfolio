@@ -14,9 +14,9 @@
                     </p>
                     <ul class="flex flex-wrap items-center">
                         <li>
-                            <a href="javascript:void(0)" class=" py-4 px-6  sm:px-10 lg:px-8 xl:px-10 inline-flex items-center justify-center  text-center text-white text-base bg-primary hover:bg-opacity-90 font-normal rounded-lg">
-                                My Projects
-                            </a>
+                        <x-layout.button-link href="#projects">
+                            My Projects
+                        </x-layout.button-link>
                         </li>
                     </ul>
                     <div class="clients pt-16">
@@ -33,7 +33,7 @@
             <div class="w-full lg:w-6/12 px-4">
                 <div class="lg:text-right lg:ml-auto">
                     <div class="relative inline-block z-10 pt-11 lg:pt-0">
-                        <img src="https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png" alt="hero" class="max-w-full lg:ml-auto" />
+                        <img src="{{ asset('img/web-development.png') }}" alt="hero" class="max-w-full lg:ml-auto" />
                         <span class="absolute -left-8 -bottom-8 z-[-1]">
                             <svg width="93" height="93" viewBox="0 0 93 93" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2.5" cy="2.5" r="2.5" fill="#3056D3" />

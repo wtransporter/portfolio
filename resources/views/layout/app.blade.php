@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
 
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: "Nunito", sans-serif;
         }

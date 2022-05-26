@@ -1,4 +1,4 @@
-<section
+<section id="projects"
     x-data="
                 {
                 showCards: 'all',
