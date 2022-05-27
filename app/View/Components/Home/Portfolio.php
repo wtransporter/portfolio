@@ -6,6 +6,10 @@ use Illuminate\View\Component;
 
 class Portfolio extends Component
 {
+    public array $projects = [];
+
+    public $tabs;
+
     /**
      * Create a new component instance.
      *
@@ -13,7 +17,44 @@ class Portfolio extends Component
      */
     public function __construct()
     {
-        //
+        $this->projects = [
+            [
+                'title' => 'HR - Employee Management',
+                'category' => ['Laravel', 'Vue.Js'],
+                'image' => url('img/management.png')
+            ],
+            [
+                'title' => 'Best Marketing tips',
+                'category' => ['Laravel'],
+                'image' => url('img/task-tracker.png')
+            ],
+            [
+                'title' => 'Task Tracker',
+                'category' => ['Laravel', 'Livewire'],
+                'image' => url('img/task-tracker.png')
+            ],
+            [
+                'title' => 'Business Card Design',
+                'category' => ['TailwindCSS'],
+                'image' => url('img/task-tracker.png')
+            ],
+            [
+                'title' => 'Game Tracker',
+                'category' => ['Laravel', 'Vue.Js'],
+                'image' => url('img/games.png')
+            ],
+            [
+                'title' => 'Web Shop',
+                'category' => ['Laravel', 'Vue.Js'],
+                'image' => url('img/web-shop.png')
+            ]
+        ];
+
+        $this->tabs = collect($this->projects)
+            ->pluck('category')
+            ->flatten()
+            ->unique()
+            ->toArray();
     }
 
     /**
