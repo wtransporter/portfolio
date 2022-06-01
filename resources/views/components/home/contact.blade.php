@@ -145,14 +145,18 @@
 
                                 throw response;
                             })
-                            .then(result => {
+                            .then(async(result) => {
                                 this.formData = {
                                     name: '',
                                     email: '',
                                     message: '',
                                 };
-
+                                
                                 this.successMessage = 'Thanks for contacting me. I will reply shortly.';
+                                
+                                await pause();
+
+                                this.successMessage = '';
                             })
                             .catch(async(response) => {
                                 const res = await (response.json());
@@ -165,7 +169,7 @@
                     }"
 
                 x-on:submit.prevent="submitForm">
-                <template x-if="successMessage">
+                <template x-if="successMessage" x-init="setTimeout(() => successMessage = '', 3000)">
                     <div x-text="successMessage" class="py-4 px-6 bg-green-600 text-gray-100 mb-4"></div>
                 </template>
                 @csrf
@@ -177,7 +181,7 @@
                         </template>
                     </div>
                     <div class="mb-6">
-                        <x-forms.input type="email" placeholder="Your Email" x-model="formData.email"
+                        <x-forms.input type="email" name="email" placeholder="Your Email" x-model="formData.email"
                             ::class="errors.email ? 'border-red-500 focus:border-red-500' : '' "/>
                         <template x-if="errors.email">
                             <div x-text="errors.email[0]" class="text-red-500 text-sm italic"></div>

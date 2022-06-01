@@ -36,6 +36,11 @@
         <x-layout.footer />
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        function pause(milliseconds = 3000) {
+            return new Promise(resolve => setTimeout(resolve, milliseconds));
+        }
+    </script>
 </body>
 
 </html>

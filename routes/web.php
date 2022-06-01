@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::post('/contact/submit', function () {
-
-    $validated = request()->validate([
-        'name' => ['required'],
-        'email' => ['required', 'email'],
-        'message' => ['required']
-    ]);
-
-    return response('Success');
-});
+Route::post('/contact/submit', [ContactController::class, 'send']);
